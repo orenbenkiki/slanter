@@ -138,14 +138,14 @@ result, visualizations of similarities using naive clustering can be misleading.
     </div>
 
     <pre class="usage"><span class='fu'>slanted_orders</span>(<span class='no'>data</span>, <span class='kw'>order_rows</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>order_cols</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>same_order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>max_spin_count</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
+  <span class='kw'>squared_order</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>same_order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>max_spin_count</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>A rectangular matrix.</p></td>
+      <td><p>A rectangular matrix containing non-negative values.</p></td>
     </tr>
     <tr>
       <th>order_rows</th>
@@ -154,6 +154,10 @@ result, visualizations of similarities using naive clustering can be misleading.
     <tr>
       <th>order_cols</th>
       <td><p>Whether to reorder the columns.</p></td>
+    </tr>
+    <tr>
+      <th>squared_order</th>
+      <td><p>Whether to reorder to minimize the l2 norm (otherwise minimizes the l1 norm).</p></td>
     </tr>
     <tr>
       <th>same_order</th>

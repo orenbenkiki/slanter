@@ -133,8 +133,8 @@ this will reorder it to move the high values close to the diagonal, for a better
 
     <pre class="usage"><span class='fu'>sheatmap</span>(<span class='no'>data</span>, <span class='no'>...</span>, <span class='kw'>order_data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>annotation_col</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>annotation_row</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>order_rows</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>order_cols</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>same_order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>cluster_rows</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>cluster_cols</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>oclust_rows</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>oclust_cols</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>squared_order</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>same_order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>cluster_rows</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>cluster_cols</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>oclust_rows</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>oclust_cols</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>clustering_distance_rows</span> <span class='kw'>=</span> <span class='st'>"euclidian"</span>,
   <span class='kw'>clustering_distance_cols</span> <span class='kw'>=</span> <span class='st'>"euclidian"</span>,
   <span class='kw'>clustering_method</span> <span class='kw'>=</span> <span class='st'>"ward.D2"</span>, <span class='kw'>clustering_callback</span> <span class='kw'>=</span> <span class='fl'>NA</span>)</pre>
@@ -144,7 +144,7 @@ this will reorder it to move the high values close to the diagonal, for a better
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>A rectangular matrix</p></td>
+      <td><p>A rectangular matrix to plot, of non-negative values (unless <code>order_data</code> is specified).</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -152,7 +152,7 @@ this will reorder it to move the high values close to the diagonal, for a better
     </tr>
     <tr>
       <th>order_data</th>
-      <td><p>An optional matrix of the same size to use for computing the orders.</p></td>
+      <td><p>An optional matrix of non-negative values of the same size to use for computing the orders.</p></td>
     </tr>
     <tr>
       <th>annotation_col</th>
@@ -169,6 +169,10 @@ this will reorder it to move the high values close to the diagonal, for a better
     <tr>
       <th>order_cols</th>
       <td><p>Whether to reorder the columns. Otherwise, use the current order.</p></td>
+    </tr>
+    <tr>
+      <th>squared_order</th>
+      <td><p>Whether to reorder to minimize the l2 norm (otherwise minimizes the l1 norm).</p></td>
     </tr>
     <tr>
       <th>same_order</th>

@@ -136,18 +136,18 @@ course <code>sheatmap</code> does this internally for you.</p>
     </div>
 
     <pre class="usage"><span class='fu'>slanted_reorder</span>(<span class='no'>data</span>, <span class='kw'>order_data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>order_rows</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>order_cols</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>same_order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>order_cols</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>squared_order</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>same_order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>A rectangular matrix.</p></td>
+      <td><p>A rectangular matrix to reorder, of non-negative values (unless <code>order_data</code> is specified).</p></td>
     </tr>
     <tr>
       <th>order_data</th>
-      <td><p>An optional matrix of the same size to use for computing the orders.</p></td>
+      <td><p>An optional matrix of non-negative values of the same size to use for computing the orders.</p></td>
     </tr>
     <tr>
       <th>order_rows</th>
@@ -156,6 +156,10 @@ course <code>sheatmap</code> does this internally for you.</p>
     <tr>
       <th>order_cols</th>
       <td><p>Whether to reorder the columns.</p></td>
+    </tr>
+    <tr>
+      <th>squared_order</th>
+      <td><p>Whether to reorder to minimize the l2 norm (otherwise minimizes the l1 norm).</p></td>
     </tr>
     <tr>
       <th>same_order</th>
