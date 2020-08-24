@@ -97,7 +97,7 @@
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">'slanter'</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">'meristems'</span>)
 <span class="no">similarity</span> <span class="kw">&lt;-</span> <span class="no">meristems</span>
-<span class="no">similarity</span>[<span class="no">similarity</span> <span class="kw">&lt;</span> <span class="fl">0</span>] <span class="kw">=</span> <span class="fl">0</span></pre></body></html></div>
+<span class="no">similarity</span>[<span class="no">similarity</span> <span class="kw">&lt;</span> <span class="fl">0</span>] <span class="kw">&lt;-</span> <span class="fl">0</span></pre></body></html></div>
 <p>The next step would be to visualize this data. R helpfully gives us the <code>pheatmap</code> function, which will (by default) also cluster the data such that similar batches would be placed near each other. That is, in theory, we would not only get us a nice visualization, but we can hope to use this to obtain some meaningful order of the batches, which might map to a position along the development process we want to analyze.</p>
 <p>So, we try:</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="kw pkg">pheatmap</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/pheatmap/man/pheatmap.html">pheatmap</a></span>(<span class="no">meristems</span>, <span class="kw">show_rownames</span><span class="kw">=</span><span class="no">F</span>, <span class="kw">show_colnames</span><span class="kw">=</span><span class="no">F</span>)</pre></body></html></div>
