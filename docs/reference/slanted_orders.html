@@ -8,11 +8,13 @@
 
 <title>Compute rows and columns orders which move high values close to the diagonal. — slanted_orders • slanter</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -36,14 +38,13 @@
 
 
 
-<meta property="og:title" content="Compute rows and columns orders which move high values close to the diagonal. — slanted_orders" />
 
+<meta property="og:title" content="Compute rows and columns orders which move high values close to the diagonal. — slanted_orders" />
 <meta property="og:description" content="For a matrix expressing the cross-similarity between two (possibly different) sets of entities,
 this produces better results than clustering (e.g. as done by pheatmap). This is because
 clustering does not care about the order of each two sub-partitions. That is, clustering is as
 happy with ((2, 1), (4, 3)) as it is with the more sensible ((1, 2), (3, 4)). As a
 result, visualizations of similarities using naive clustering can be misleading." />
-
 
 
 
@@ -106,7 +107,6 @@ result, visualizations of similarities using naive clustering can be misleading.
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -128,18 +128,22 @@ result, visualizations of similarities using naive clustering can be misleading.
     </div>
 
     <div class="ref-description">
-    
     <p>For a matrix expressing the cross-similarity between two (possibly different) sets of entities,
 this produces better results than clustering (e.g. as done by <code>pheatmap</code>). This is because
 clustering does not care about the order of each two sub-partitions. That is, clustering is as
 happy with <code>((2, 1), (4, 3))</code> as it is with the more sensible <code>((1, 2), (3, 4))</code>. As a
 result, visualizations of similarities using naive clustering can be misleading.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>slanted_orders</span>(<span class='no'>data</span>, <span class='kw'>order_rows</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>order_cols</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>squared_order</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>same_order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>max_spin_count</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>slanted_orders</span><span class='op'>(</span>
+  <span class='va'>data</span>,
+  order_rows <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  order_cols <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  squared_order <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  same_order <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  max_spin_count <span class='op'>=</span> <span class='fl'>10</span>
+<span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -168,14 +172,14 @@ result, visualizations of similarities using naive clustering can be misleading.
       <td><p>How many times to retry improving the solution before giving up.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A list with two keys, <code>rows</code> and <code>cols</code>, which contain the order.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw pkg'>slanter</span><span class='kw ns'>::</span><span class='fu'>slanted_orders</span>(<span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/t.html'>t</a></span>(<span class='no'>mtcars</span>)))</div><div class='output co'>#&gt; $rows
+    <pre class="examples"><div class='input'><span class='fu'>slanter</span><span class='fu'>::</span><span class='fu'>slanted_orders</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/t.html'>t</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $rows
 #&gt;  [1] 15 25  4 16  8 22  6  5 23 17 14 12 13  7 24  1  2  9 29 11 10 27 19 21  3
 #&gt; [26] 32 26 18 31 20 30 28
 #&gt; 
@@ -198,7 +202,7 @@ result, visualizations of similarities using naive clustering can be misleading.
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

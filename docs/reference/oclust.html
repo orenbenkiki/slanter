@@ -8,11 +8,13 @@
 
 <title>Hierarchically cluster ordered data. — oclust • slanter</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -36,12 +38,11 @@
 
 
 
-<meta property="og:title" content="Hierarchically cluster ordered data. — oclust" />
 
+<meta property="og:title" content="Hierarchically cluster ordered data. — oclust" />
 <meta property="og:description" content="Given a distance matrix for sorted objects, compute a hierarchical clustering preserving this
 order. That is, this is similar to hclust with the constraint that the result's order is
 always 1:N." />
-
 
 
 
@@ -104,7 +105,6 @@ always 1:N." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -126,15 +126,13 @@ always 1:N." />
     </div>
 
     <div class="ref-description">
-    
     <p>Given a distance matrix for sorted objects, compute a hierarchical clustering preserving this
 order. That is, this is similar to <code>hclust</code> with the constraint that the result's order is
 always <code>1:N</code>.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>oclust</span>(<span class='no'>distances</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"ward.D2"</span>, <span class='kw'>order</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>members</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>oclust</span><span class='op'>(</span><span class='va'>distances</span>, method <span class='op'>=</span> <span class='st'>"ward.D2"</span>, order <span class='op'>=</span> <span class='cn'>NULL</span>, members <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -155,23 +153,23 @@ always <code>1:N</code>.</p>
       <td><p>Optionally, the number of members for each row/column of the distances (by default, one each).</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A clustering object (as created by <code>hclust</code>).</p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>If an <code>order</code> is specified, assumes that the data will be re-ordered by this order. That is,
 the indices in the returned <code>hclust</code> object will refer to the post-reorder data locations,
 **not** to the current data locations.</p>
+
 <p>This can be applied to the results of <code>slanted_reorder</code>, to give a "plausible"
 clustering for the data.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>clusters</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>slanter</span><span class='kw ns'>::</span><span class='fu'>oclust</span>(<span class='fu'><a href='https://rdrr.io/r/stats/dist.html'>dist</a></span>(<span class='no'>mtcars</span>), <span class='kw'>order</span><span class='kw'>=</span><span class='fl'>1</span>:<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>mtcars</span>)[<span class='fl'>1</span>])
-<span class='no'>clusters</span>$<span class='no'>order</span></div><div class='output co'>#&gt;  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+    <pre class="examples"><div class='input'><span class='va'>clusters</span> <span class='op'>&lt;-</span> <span class='fu'>slanter</span><span class='fu'>::</span><span class='fu'>oclust</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/dist.html'>dist</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>)</span>, order<span class='op'>=</span><span class='fl'>1</span><span class='op'>:</span><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>)</span>
+<span class='va'>clusters</span><span class='op'>$</span><span class='va'>order</span>
+</div><div class='output co'>#&gt;  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
 #&gt; [26] 26 27 28 29 30 31 32</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -188,7 +186,7 @@ clustering for the data.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -8,11 +8,13 @@
 
 <title>Reorder data rows and columns to move high values close to the diagonal. — slanted_reorder • slanter</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -36,13 +38,12 @@
 
 
 
-<meta property="og:title" content="Reorder data rows and columns to move high values close to the diagonal. — slanted_reorder" />
 
+<meta property="og:title" content="Reorder data rows and columns to move high values close to the diagonal. — slanted_reorder" />
 <meta property="og:description" content="Given a matrix expressing the cross-similarity between two (possibly different) sets of entities,
 this uses slanted_orders to compute the &quot;best&quot; order for visualizing the matrix, then
 returns the reordered data. Commonly used in pheatmap(slanted_reorder(data), ...), and of
 course sheatmap does this internally for you." />
-
 
 
 
@@ -105,7 +106,6 @@ course sheatmap does this internally for you." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -127,17 +127,21 @@ course sheatmap does this internally for you." />
     </div>
 
     <div class="ref-description">
-    
     <p>Given a matrix expressing the cross-similarity between two (possibly different) sets of entities,
 this uses <code>slanted_orders</code> to compute the "best" order for visualizing the matrix, then
 returns the reordered data. Commonly used in <code>pheatmap(slanted_reorder(data), ...)</code>, and of
 course <code>sheatmap</code> does this internally for you.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>slanted_reorder</span>(<span class='no'>data</span>, <span class='kw'>order_data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>order_rows</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>order_cols</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>squared_order</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>same_order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>slanted_reorder</span><span class='op'>(</span>
+  <span class='va'>data</span>,
+  order_data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  order_rows <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  order_cols <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  squared_order <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  same_order <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -166,14 +170,14 @@ course <code>sheatmap</code> does this internally for you.</p>
       <td><p>Whether to apply the same order to both rows and columns.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A matrix of the same shape whose rows and columns are a permutation of the input.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw pkg'>slanter</span><span class='kw ns'>::</span><span class='fu'>slanted_reorder</span>(<span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/t.html'>t</a></span>(<span class='no'>mtcars</span>)))</div><div class='output co'>#&gt;                     Cadillac Fleetwood Pontiac Firebird Hornet 4 Drive
+    <pre class="examples"><div class='input'><span class='fu'>slanter</span><span class='fu'>::</span><span class='fu'>slanted_reorder</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/t.html'>t</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;                     Cadillac Fleetwood Pontiac Firebird Hornet 4 Drive
 #&gt; Cadillac Fleetwood           1.0000000        0.9996817      0.9978952
 #&gt; Pontiac Firebird             0.9996817        1.0000000      0.9990297
 #&gt; Hornet 4 Drive               0.9978952        0.9990297      1.0000000
@@ -452,7 +456,7 @@ course <code>sheatmap</code> does this internally for you.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
