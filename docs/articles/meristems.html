@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">slanter</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1-0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2-0</span>
       </span>
     </div>
 
@@ -123,10 +123,10 @@
 <p><img src="meristems_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 <p><strong>This is exactly the same data as before.</strong></p>
 <p><em>Implementation notes:</em></p>
-<p>Internally, this is implemented by the <code>slanted_orders</code> function, which repeatedly sorts the rows by the index of their “center of mass” column index, and then the columns by the index of their “center of mass” row index, until the system stabilizes. This is pretty fast for small data (e.g. up to N=1000 batches as in here) but grows (roughly) at a rate of (N log N)^2, so it may take a long while when ordering several thousands of elements. That said, displaying a heatmap with many thousand rows and columns isn’t very practical anyway.</p>
-<p>This is not restricted to the square symmetric matrix one gets from computing correlations. It will also work just as well for a rectangular asymmetric similarity matrix.</p>
+<p>Internally, this is implemented by the <code>slanted_orders</code> function, which repeatedly sorts the rows by the index of their “center of mass” column, and then the columns by the index of their “center of mass” row, until the system stabilizes. This is pretty fast for small data (e.g. up to N=1000 batches as in here) but grows (roughly) at a rate of (N log N)^2, so it may take a long while when ordering several thousands of elements. That said, displaying a heatmap with many thousand rows and columns isn’t very practical anyway.</p>
+<p>This is not restricted to the square symmetric matrix one gets from computing correlations. It will also work just as well for a rectangular or an asymmetric similarity matrix.</p>
 <p>The <code>sheatmap</code> function wraps all this (with additional functionality described below), similarly to the way <code>pheatmap</code> wraps the unordered <code>hclust</code> functionality.</p>
-<p>The similarity data used for reordering must contain non-negative values. Here we are showing correlation data, which can be negative. To overcome this we have chosen to set all negative correlation to zero, and we use the <code>order_data</code> which allows displaying the original (possibly negative) data while ordering by another (non-negative) data. Clustering is always done on the original data.</p>
+<p>The similarity data used for reordering must contain only non-negative values. Here we are showing correlation data, which can be negative. To overcome this we have chosen to set all negative correlation to zero, and we use the <code>order_data</code> which allows displaying the original (possibly negative) data while ordering by another (non-negative) data. Clustering (described below) is always done on the original data.</p>
 </div>
 <div id="reordered-clustering" class="section level2">
 <h2 class="hasAnchor">

@@ -73,7 +73,7 @@ this will reorder it to move the high values close to the diagonal, for a better
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">slanter</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1-0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2-0</span>
       </span>
     </div>
 
@@ -139,6 +139,7 @@ this will reorder it to move the high values close to the diagonal, for a better
   order_cols <span class='op'>=</span> <span class='cn'>TRUE</span>,
   squared_order <span class='op'>=</span> <span class='cn'>TRUE</span>,
   same_order <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  discount_outliers <span class='op'>=</span> <span class='cn'>TRUE</span>,
   cluster_rows <span class='op'>=</span> <span class='cn'>TRUE</span>,
   cluster_cols <span class='op'>=</span> <span class='cn'>TRUE</span>,
   oclust_rows <span class='op'>=</span> <span class='cn'>TRUE</span>,
@@ -187,6 +188,10 @@ this will reorder it to move the high values close to the diagonal, for a better
     <tr>
       <th>same_order</th>
       <td><p>Whether to apply the same order to both rows and columns (if reordering both).</p></td>
+    </tr>
+    <tr>
+      <th>discount_outliers</th>
+      <td><p>Whether to do a final order phase discounting outlier values far from the diagonal.</p></td>
     </tr>
     <tr>
       <th>cluster_rows</th>
